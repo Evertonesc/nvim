@@ -129,6 +129,8 @@ require('lazy').setup({
         vim.keymap.set('n', '[c', require('gitsigns').prev_hunk, { buffer = bufnr, desc = 'Go to Previous Hunk' })
         vim.keymap.set('n', ']c', require('gitsigns').next_hunk, { buffer = bufnr, desc = 'Go to Next Hunk' })
         vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review [H]unk' })
+        vim.keymap.set('n', '<leader>dt', require('gitsigns').diffthis, { buffer = bufnr, desc = '[D]iff [T]his file' })
+        vim.keymap.set('n', '<leader>bl', require('gitsigns').blame_line, { buffer = bufnr, desc = '[B]lame [L]line' })
       end,
     },
   },
@@ -330,6 +332,28 @@ vim.o.termguicolors = true
 
 -- Cursor
 vim.o.guicursor = ""
+
+
+-- change the background color of floating windows and borders.
+vim.api.nvim_set_hl(0, "NormalFloat", {
+  bg = "NONE",
+  fg = "NONE",
+})
+
+vim.api.nvim_set_hl(0, "FloatBorder", {
+  bg = "NONE",
+  fg = "NONE"
+})
+
+
+-- Commands
+vim.cmd([[
+  augroup LineNrTransparent
+    autocmd!
+    autocmd VimEnter * hi LineNr guibg=none
+  augroup END
+]])
+
 -- [[ Basic Keymaps ]]
 
 -- Keymaps for better default experience
@@ -507,6 +531,13 @@ require('neodev').setup()
 --    }
 --  end,
 --}
+
+-- open telescope when neovim starts only if no other plugin is opening
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    vim.cmd("silent! lua require('telescope.builtin').find_files()")
+  end,
+})
 
 
 
