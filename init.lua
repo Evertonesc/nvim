@@ -290,12 +290,16 @@ vim.o.hlsearch = false
 
 -- Make line numbers default
 vim.wo.number = true
+vim.wo.relativenumber = true
+
+-- Set the left margin
+--vim.wo.foldcolumn="-1"
 
 -- Indenting
 vim.o.expandtab = true
 vim.o.shiftwidth = 2
 vim.o.smartindent = true
-vim.o.tabstop = 3
+vim.o.tabstop = 4
 vim.o.softtabstop = 2
 
 -- Enable mouse mode
