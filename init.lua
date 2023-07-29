@@ -334,9 +334,6 @@ vim.o.completeopt = 'menuone,noselect'
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 
--- Cursor
-vim.o.guicursor = ""
-
 
 -- change the background color of floating windows and borders.
 vim.api.nvim_set_hl(0, "NormalFloat", {

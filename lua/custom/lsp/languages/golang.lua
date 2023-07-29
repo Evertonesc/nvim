@@ -4,7 +4,15 @@ local capabilities = require("custom.lsp.lspconfig").capabilities
 local lspconfig = require("lspconfig")
 local util = require "lspconfig/util"
 
-lspconfig.gopls.setup { 
+
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = '*.go',
+  callback = function()
+    vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
+  end
+})
+
+lspconfig.gopls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   cmd = {"gopls"},
