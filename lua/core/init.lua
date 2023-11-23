@@ -1,0 +1,5 @@
+require("core/packer")
+require("core/plugins")
+require("core/keymaps")
+require("core/settings")
+require("core/languages")
