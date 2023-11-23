@@ -10,7 +10,6 @@ capabilities.textDocument.colorProvider = {
 local buf_map = vim.api.nvim_buf_set_keymap
 local opts = { noremap = true, silent = true }
 
--- local util = require("lspconfig/util")
 
 vim.diagnostic.config({
 	virtual_text = true,
@@ -45,24 +44,6 @@ on_attach = function(client, bufnr)
 		require("document-color").buf_attach(bufnr)
 	end
 end
-
--- local servers = {
--- 	"clangd",
--- 	"cssls",
--- 	"cssmodules_ls",
--- 	"emmet_ls",
--- 	"gopls",
--- 	"html",
--- 	"pyright",
--- 	"tailwindcss",
--- 	"tsserver",
--- }
--- for _, server in pairs(servers) do
--- 	lspconfig[server].setup({
--- 		capabilities = capabilities,
--- 		on_attach = on_attach,
--- 	})
--- end
 
 
 -- Go

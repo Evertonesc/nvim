@@ -1,7 +1,7 @@
 local dap = require('dap')
 local dapui = require('dapui')
 
-vim.fn.sign_define("DapBreakpoint", { text = "⬢", texthl = "Red", linehl = "", numhl = "Red" })
+vim.fn.sign_define("DapBreakpoint", { text = "⬢", texthl = "Yellow", linehl = "ColorColumn", numhl = "Yellow" })
 vim.fn.sign_define("DapStopped", { text = "▶", texthl = "Green", linehl = "ColorColumn", numhl = "Green" })
 
 
