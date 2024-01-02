@@ -1,7 +1,7 @@
 local set = vim.opt
 local cmd = vim.api.nvim_command
 
-cmd("language en_US")
+--cmd("language en_US")
 
 if vim.fn.has("termguicolors") then
 	set.termguicolors = true
