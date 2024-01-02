@@ -7,8 +7,7 @@ require("mason").setup({
 		}
 	},
 	ensure_installed = {
-		"gopls"
+		"gopls",
+		"pyright"
 	}
-
-
 })
