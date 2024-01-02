@@ -8,6 +8,10 @@ require("mason").setup({
 	},
 	ensure_installed = {
 		"gopls",
-		"pyright"
+		"pyright",
+		"mypy",
+		"ruff",
+		"black",
+		"debugpy",
 	}
 })

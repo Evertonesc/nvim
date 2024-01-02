@@ -30,3 +30,7 @@ map("n", "<F8>", ":lua require'dap'.step_over()<CR>", opts)
 map("n", "<F7>", ":lua require'dap'.step_into()<CR>", opts)
 map("n", "<F6>", ":lua require'dap'.step_out()<CR>", opts)
 map("n", "<F4>", ":lua require'dapui'.toggle()<CR>", opts)
+
+map("n", "<Leader>dn", ":lua require'dap-python'.test_method()<CR>", opts)
+map("n", "<Leader>df", ":lua require'dap-python'.test_class()<CR>", opts)
+map("n", "<Leader>ds", ":lua require'dap-python'.debug_selection()<CR>", opts)

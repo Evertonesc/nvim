@@ -26,25 +26,11 @@ require('dap-go').setup{
 	}
 }
 
--- dap.configurations.go = {
--- 	{
--- 		type = "go",
--- 		name = "Debug",
--- 		request = "launch",
--- 		program = "${file}",
--- 	},
--- 	{
--- 		type = "go",
--- 		name = "Debug test",
--- 		request = "launch",
--- 		mode = "test",
--- 		program = "${file}",
--- 	},
--- 	{
--- 		type = "go",
--- 		name = "Debug test (go.mod)",
--- 		request = "launch",
--- 		mode = "test",
--- 		program = "./${relativeFileDirname}",
--- 	},
--- }
+dap.configurations.python = {
+	{ 
+		type = "python",
+		request = "launch",
+		name = "run python locally",
+		program = "${file}",
+	},
+}
