@@ -113,6 +113,15 @@ return require('packer').startup(function(use)
 	use {"akinsho/toggleterm.nvim", tag = '*'}
 
 
+	use {
+		"olexsmir/gopher.nvim",
+		requires = { -- dependencies
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+		},
+	}
+
+
 	if packer_bootstrap then
 		require('packer').sync()
 	end
